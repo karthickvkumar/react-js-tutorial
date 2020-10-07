@@ -9,8 +9,8 @@ import './index.css';
 let App = () => {
   return (
     <div>
-      <h1>Welcome to React</h1>
-      <Login></Login>
+      {/* <Login></Login> */}
+      <Register></Register>
     </div>
   )
 }
