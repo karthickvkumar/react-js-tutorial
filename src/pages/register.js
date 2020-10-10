@@ -17,12 +17,27 @@ class Register extends Component {
     }
 
     handleInput = (event)=> {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+        console.log(event.target.name)
+        if(event.target.name == 'hobbies'){
+            this.state.hobbies.push(event.target.value);
+            this.setState({
+                hobbies : this.state.hobbies
+            })
+            console.log(this.state.hobbies)
+        }
+        else{
+            this.setState({
+                [event.target.name]: event.target.value
+            })
+        }
     }
 
     render() {
+        let hobbies = this.state.hobbies.map((value, index) => {
+            return(
+                    <li  key={index}>{value}</li>
+            )
+        })
         return (
             <div>
                 <h3>Welcome to Registar Page</h3>
@@ -42,21 +57,21 @@ class Register extends Component {
                 <input type="date" onChange={this.handleInput} name="dob"/>
                 <br></br>
                 <label>Select your Gender:</label>
-                <input type="radio" value="male" name="gender"/>Male
-                <input type="radio" value="female" name="gender"/>Female
-                <input type="radio" value="others" name="gender"/>Others
+                <input type="radio" value="male" name="gender" onChange={this.handleInput}/>Male
+                <input type="radio" value="female" name="gender" onChange={this.handleInput}/>Female
+                <input type="radio" value="others" name="gender" onChange={this.handleInput}/>Others
                 <br></br>
                 <label>Select your Hobbies:</label>
-                <input type="checkbox" value="cricket" name="hobbies"/>Cricket
-                <input type="checkbox" value="football" name="hobbies"/>Football
-                <input type="checkbox" value="hockey" name="hobbies"/>Hockey
-                <input type="checkbox" value="chess" name="hobbies"/>Chess
+                <input type="checkbox" value="cricket" name="hobbies" onChange={this.handleInput}/>Cricket
+                <input type="checkbox" value="football" name="hobbies" onChange={this.handleInput}/>Football
+                <input type="checkbox" value="hockey" name="hobbies" onChange={this.handleInput}/>Hockey
+                <input type="checkbox" value="chess" name="hobbies" onChange={this.handleInput}/>Chess
                 <br></br>
                 <label>Enter your Address:</label>
                 <textarea placeholder="Enter address" name="address" onChange={this.handleInput}></textarea>
                 <br></br>
                 <label>Select your State:</label>
-                <select defaultValue={''}>
+                <select defaultValue={''} onChange={this.handleInput} name="state">
                     <option value='' disabled>Please select any one state</option>
                     <option value='Tamil Nadu'>Tamil Nadu</option>
                     <option value='Kerala'>Kerala</option>
@@ -71,8 +86,14 @@ class Register extends Component {
                     <h3>The user last name is {this.state.lastName}</h3>
                     <h3>The user email is {this.state.email}</h3>
                     <h3>The user dob is {this.state.dob}</h3>
+                    <h3>The user gender is {this.state.gender}</h3>
+                    <h3>The user hobbies are </h3>
+                    <ol>
+                    {hobbies}
+                    </ol>
                     <h3>The user password is {this.state.password}</h3>
                     <h3>The user address is {this.state.address}</h3>
+                    <h3>The user state is {this.state.state}</h3>
                 </div>
 
             </div>
