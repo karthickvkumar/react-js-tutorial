@@ -2,3 +2,17 @@
     color: red;
     text-decoration: underline;
 }
+.open-eye{
+    height: 20px;
+    position: absolute;
+    top: 82px;
+    margin-left: -28px;
+    cursor: pointer;
+}
+.close-eye{
+    height: 18px;
+    position: absolute;
+    margin-left: -27px;
+    cursor: pointer;
+    margin-top: 2px;
+}
