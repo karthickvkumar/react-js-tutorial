@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 
 class Register extends Component {
     constructor(props) {
@@ -81,6 +82,7 @@ class Register extends Component {
                     <option value='Delhi'>Delhi</option>
                 </select>
                 <br></br>
+                <NavLink to="/list">Go to List Page</NavLink>
                 <div>
                     <h3>The user first name is {this.state.firstName}</h3>
                     <h3>The user last name is {this.state.lastName}</h3>

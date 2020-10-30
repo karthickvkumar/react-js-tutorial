@@ -47,26 +47,49 @@ class ListPage extends Component {
                     "last_name": "Howell",
                     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg"
                 }
-            ]
+            ],
+            username: 'Mr.Tom',
+            age: 22,
+            address: {
+                street: 'ECR Road',
+                state: 'Chennai'
+            }
     
         }
     }
     render() {
-        let userProfiles = this.state.userList.map((value, index) => {
+        let userInformation = this.state.userList.map((value, inidex) => {
             return(
-                <div key={index}>
-                    <h3>The user first name is {value.first_name}</h3>
-                    <h3>The user last name is {value.last_name}</h3>
-                    <h3>The user email is {value.email}</h3>
-                    <img src={value.avatar}></img>
-                </div>
+                <tr key={inidex}>
+                    <td>{value.first_name}</td>
+                    <td>{value.last_name}</td>
+                    <td>
+                        <img src={value.avatar}/>
+                    </td>
+                    <td>{value.email}</td>
+                </tr>
             )
-        });
-
+        }) 
         return (
             <div>
                 <h2>This is a List Page</h2>
-                {userProfiles}
+                <h2>{this.state.username}</h2>
+                <h2>{this.state.age}</h2>
+                <h2>{this.state.address.street}</h2>
+                <h2>{this.state.address.state}</h2>
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Profile Picture</th>
+                            <th>Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {userInformation}
+                    </tbody>
+                </table>
             </div>
         );
     }

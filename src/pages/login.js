@@ -24,7 +24,8 @@ class Login extends Component {
         this.setState({
             usernameError : this.state.username == '' ? true : false,
             passwordError : this.state.password == '' ? true : false
-         })
+         });
+         this.props.history.push("/register")
     }
 
     toggleIcon(){
