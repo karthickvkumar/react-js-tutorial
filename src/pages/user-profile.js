@@ -13,7 +13,7 @@ class UserProfile extends Component {
         let url = 'https://reqres.in/api/users?page=2';
         axios.get(url)
             .then((response) => {
-                console.log(response.data.data)
+                console.log(response)
                 this.setState({
                     userList: response.data.data
                 })
