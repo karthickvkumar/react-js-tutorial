@@ -7,6 +7,7 @@ import Login from './pages/login';
 import ListPage from './pages/list';
 import UserProfile from './pages/user-profile';
 import Post from './pages/post';
+import Update from './pages/update';
 import PageNotFound from './components/page-not-found';
 
 import './index.css';
@@ -20,6 +21,7 @@ let App = () => {
         <Route path="/list" component={ListPage}></Route>
         <Route path="/profile" component={UserProfile}></Route>
         <Route path="/post" component={Post}></Route>
+        <Route path="/update" component={Update}></Route>
         <Route component={PageNotFound}></Route>
       </Switch>
     </BrowserRouter>
